@@ -2,11 +2,11 @@ module Rumanu
   PYTHAGOREAN_VOWELS = { 'a' => 1, 'á' => 1, 'e' => 5, 'é' => 5, 'i' => 9,
     'í' => 9, 'o' => 6, 'ó' => 6, 'u' => 3, 'ú' => 3, 'ü' => 3 }
 
-  PYTHAGOREAN_VOWELS = { 'b' => 2, 'c' => 3, 'd' => 4, 'f' => 6, 'g' => 7,
+  PYTHAGOREAN_CONSONANTS = { 'b' => 2, 'c' => 3, 'd' => 4, 'f' => 6, 'g' => 7,
         'h' => 8, 'j' => 1, 'k' => 2, 'l' => 3, 'm' => 4, 'n' => 5,
         'p' => 7, 'q' => 8, 'r' => 9, 's' => 1, 't' => 2, 'v' => 4,
         'w' => 5, 'x' => 6, 'y' => 7, 'z' => 8 }
 
-  PY_ALPHABET = PYTHAGOREAN_VOWELS.merge(PYTHAGOREAN_VOWELS)
+  PY_ALPHABET = PYTHAGOREAN_VOWELS.merge(PYTHAGOREAN_CONSONANTS)
 
 end

@@ -3,6 +3,7 @@ require "rumanu/helpers"
 require "rumanu/alphabets"
 module Rumanu
   class Numerology
+    include Rumanu
     attr_reader :name, :alphabet, :dob
     DOB_PREFIXES = [/\d{2}\.\d{2}\.\d{4}/,
                     /\d{2}\/\d{2}\/\d{4}/,
@@ -27,6 +28,14 @@ module Rumanu
       validate_dob(alphabet)
       @dob = dob
     end
+
+    def destiny
+      r = dob.split(/\.|-|\//).inject(0) {|sum,element| sum+element.to_i}
+      value = digit_sum(r)
+      return value unless value.to_s.length >1
+      digit_sum(value)
+    end
+
 
     # Private methods
 

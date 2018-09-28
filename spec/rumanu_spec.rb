@@ -46,4 +46,11 @@ RSpec.describe Rumanu do
         end
       end
     end
+    context 'when dob is valid' do
+      before {entity.dob = '15/02/1948'}
+        it "should return destiny number 3 for dob: '15/02/1948'" do
+          expect(entity.destiny).to eq(3)
+        end
+        it "should return destiny number 4 for dob: '13/01/2015'"
+    end
 end

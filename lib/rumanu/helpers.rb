@@ -8,4 +8,14 @@ module Rumanu
     cum
   end
 
+  def reduce_list(l,alphabet)
+    init = 0
+    l.each do |c|
+        alphabet.each do |k,v|
+            init += v if c == k
+        end
+    end
+    digit_sum(init)
+  end
+
 end

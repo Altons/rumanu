@@ -37,6 +37,11 @@ module Rumanu
       @vowels = vowels
     end
 
+    def consonants=(consonants)
+      #validate_alphabet(alphabet)
+      @consonants = consonants
+    end
+
     def destiny
       r = dob.split(/\.|-|\//).inject(0) {|sum,element| sum+element.to_i}
       value = digit_sum(r)

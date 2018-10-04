@@ -4,18 +4,21 @@ require "rumanu/alphabets"
 module Rumanu
   class Numerology
     include Rumanu
-    attr_reader :name, :alphabet, :dob
+    attr_reader :name, :alphabet, :dob, :vowels, :consonants
     DOB_PREFIXES = [/\d{2}\.\d{2}\.\d{4}/,
                     /\d{2}\/\d{2}\/\d{4}/,
                     /\d{2}-\d{2}-\d{4}/]
 
     def initialize
-      @alphabet = PY_ALPHABET
+      @vowels = PY_VOWELS
+      @consonants = PY_CONSONANTS
+      @alphabet = @vowels.merge @consonants
+
     end
 
     def name=(name)
       validate_name(name)
-      @name = name
+      @name = name.downcase
 
     end
 
@@ -24,9 +27,14 @@ module Rumanu
       @dob = dob
     end
 
-    def alphabet=(alphabet)
-      validate_dob(alphabet)
-      @dob = dob
+    # def alphabet=(alphabet)
+    #   validate_alphabet(alphabet)
+    #   @alphabet = alphabet
+    # end
+
+    def vowels=(vowels)
+      #validate_alphabet(alphabet)
+      @vowels = vowels
     end
 
     def destiny
@@ -36,12 +44,22 @@ module Rumanu
       digit_sum(value)
     end
 
+    # Sum of all name's vowels
+    def motivation
+      reduce_list(prep_name, @vowels)
+    end
+
 
     # Private methods
+
+    def prep_name
+      name.split('').delete_if{|i| i == " "}
+    end
 
     def validate_name(arg)
       raise ArgumentError.new("Name must be a string") unless arg.is_a? String
       raise ArgumentError.new("Name can't be blank") unless arg.length > 0
+      raise ArgumentError.new("Name can't be just numbers or special characters") unless arg.gsub(/[^A-Za-z ]/, '').length > 0
     end
 
     def validate_alphabet(arg)
@@ -56,7 +74,7 @@ module Rumanu
 
   end
 
-    private :validate_name, :validate_dob, :validate_alphabet
+    private :validate_name, :validate_dob, :validate_alphabet, :prep_name
 
   end
 end

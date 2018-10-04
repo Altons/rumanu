@@ -5,7 +5,7 @@ RSpec.describe Rumanu do
     expect(Rumanu::VERSION).not_to be nil
   end
 
-  context 'when vowels is valid' do
+  context 'when vowels are valid' do
     before {entity.vowels = {'a'=> 1,'e'=>5}}
     it 'is a Hash Object' do
       expect(entity.vowels.is_a? Hash).to be true
@@ -13,7 +13,22 @@ RSpec.describe Rumanu do
     it 'has at least one pair of key=>value' do
       expect(entity.vowels.empty?).to be false
     end
-    it 'has all values of numeric type'
+    it 'has all values of numeric type' do
+      expect(entity.vowels.values.any? {|v| v.class == Integer}).to be true
+    end
+  end
+
+  context 'when consonants are valid' do
+    before {entity.consonants = {'b'=> 1,'c'=>5}}
+    it 'is a Hash Object' do
+      expect(entity.consonants.is_a? Hash).to be true
+    end
+    it 'has at least one pair of key=>value' do
+      expect(entity.consonants.empty?).to be false
+    end
+    it 'has all values of numeric type' do
+      expect(entity.consonants.values.any? {|v| v.class == Integer}).to be true
+    end
   end
 
   context 'when alphabet is valid' do

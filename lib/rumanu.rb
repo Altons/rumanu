@@ -5,9 +5,6 @@ module Rumanu
   class Numerology
     include Rumanu
     attr_reader :name, :alphabet, :dob, :vowels, :consonants
-    DOB_PREFIXES = [/\d{2}\.\d{2}\.\d{4}/,
-                    /\d{2}\/\d{2}\/\d{4}/,
-                    /\d{2}-\d{2}-\d{4}/]
 
     def initialize
       @vowels = PY_VOWELS
@@ -68,15 +65,14 @@ module Rumanu
     end
 
     def validate_alphabet(arg)
-      raise ArgumentError.new("Name must be a string") unless arg.is_a? Hash
-      raise ArgumentError.new("Name can't be blank") unless arg.empty? true
+      valid_hash?(arg)
+      valid_alphabet = arg.map {|k,v| k.is_a?(String) && v.is_a?(Integer) && 1 || 0 }.reduce(0,:+)
+      raise ArgumentError.new("Invalid Alphabet") unless valid_alphabet>0
+
     end
 
     def validate_dob(arg)
-      raise ArgumentError.new("Date of birth must be a string") unless arg.is_a? String
-      raise ArgumentError.new("Date of birth can't be blank") unless arg.length > 0
-      raise ArgumentError.new("Incorrect date format") unless arg.match(Regexp.union(DOB_PREFIXES))
-
+      valid_date?(arg)
   end
 
     private :validate_name, :validate_dob, :validate_alphabet, :prep_name

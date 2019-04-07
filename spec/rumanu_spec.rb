@@ -43,7 +43,8 @@ RSpec.describe Rumanu do
 
   context 'when the alphabet is invalid' do
     cases = [['should raise ArgumentError if not Hash',nil],
-             ['should raise ArgumentError if Hash is empty',Hash.new]
+             ['should raise ArgumentError if Hash is empty',Hash.new],
+             ['should raise ArgumentError if Alphabet is malformed',{a:1,"b"=>23}]
             ]
     cases.each do |c|
       it c[0] do
@@ -86,6 +87,11 @@ RSpec.describe Rumanu do
       case2 = Rumanu::Numerology.new
       case2.dob = '09.10.1940'
       example "should return destiny number 4 for dob: #{case2.dob}" do
+        expect(case2.destiny).to eq(6)
+      end
+      case3 = Rumanu::Numerology.new
+      case3.dob = '1940-10-09'
+      example "should return destiny number 4 for dob: #{case3.dob}" do
         expect(case2.destiny).to eq(6)
       end
     end

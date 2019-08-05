@@ -7,6 +7,4 @@ module Rumanu
         'p' => 7, 'q' => 8, 'r' => 9, 's' => 1, 't' => 2, 'v' => 4,
         'w' => 5, 'x' => 6, 'y' => 7, 'z' => 8 }
 
-  PY_ALPHABET = PY_VOWELS.merge(PY_CONSONANTS)
-
 end

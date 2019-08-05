@@ -1,4 +1,5 @@
 module Rumanu
+  # Pythagoras alphabet
   PY_VOWELS = { 'a' => 1, 'á' => 1, 'e' => 5, 'é' => 5, 'i' => 9,
     'í' => 9, 'o' => 6, 'ó' => 6, 'u' => 3, 'ú' => 3, 'ü' => 3 }
 

@@ -2,10 +2,9 @@ require 'date'
 module Rumanu
 
   def digit_sum(n)
-    cum = 0
-    n.to_s.each_char { |c| cum+=c.to_i}
+    cum = n.digits.sum
     cum = digit_sum(cum) unless cum.to_s.length == 1
-    cum
+    return cum
   end
 
   def reduce_list(l,alphabet)

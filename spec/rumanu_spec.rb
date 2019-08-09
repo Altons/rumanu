@@ -38,7 +38,6 @@ RSpec.describe Rumanu do
     it 'has at least one pair of key=>value' do
       expect(entity.alphabet.empty?).to be false
     end
-    it 'should be equal to vowels + consonants'
   end
 
   context 'when the alphabet is invalid' do
@@ -99,14 +98,17 @@ RSpec.describe Rumanu do
       str = "John Lennon"
       sc = Rumanu::Numerology.new
       sc.name = str
-      example 'all characters are downcase' do
-        expect(sc.name).to eq(str.downcase)
-      end
       example 'split name to char list with no blanks' do
-        expect(sc.send(:prep_name)).to match_array ["j", "o", "h", "n", "l", "e", "n", "n", "o", "n"]
+        expect(sc.send(:prep_name)).to match_array str.gsub(" ","").downcase.split("")
       end
       example 'sum of all vowels (motivation) should be 8' do
         expect(sc.motivation).to eq(8)
+      end
+      example 'sum of all consonants (personality) should be 5' do
+        expect(sc.personality).to eq(5)
+      end
+      example 'sum of all characters (expression) should be 4' do
+        expect(sc.expression).to eq(4)
       end
     end
 end

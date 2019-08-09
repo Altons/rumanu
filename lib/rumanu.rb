@@ -4,19 +4,24 @@ require "rumanu/alphabets"
 module Rumanu
   class Numerology
     include Rumanu
-    attr_reader :name, :alphabet, :dob, :vowels, :consonants
+    attr_reader :alphabet, :dob, :vowels, :consonants
 
-    def initialize
+    def initialize(name="Vance Louis Wheeler",dob="03/08/1944")
       @vowels = PY_VOWELS
       @consonants = PY_CONSONANTS
       @alphabet = @vowels.merge @consonants
-
+      @name = name
+      @dob = dob
     end
 
     def name=(name)
       validate_name(name)
-      @name = name.downcase
+      @name = name
 
+    end
+
+    def name
+      @name.split.map(&:capitalize).join(' ').dup
     end
 
     def dob=(dob)
@@ -51,11 +56,21 @@ module Rumanu
       reduce_list(prep_name, @vowels)
     end
 
+    # Sum of all name's consonants
+    def personality
+      reduce_list(prep_name, @consonants)
+    end
+
+    # Sum of all name's characters
+    def expression
+      reduce_list(prep_name, @alphabet)
+    end
+
 
     # Private methods
 
     def prep_name
-      name.split('').delete_if{|i| i == " "}
+      @name.downcase.split('').delete_if{|i| i == " "}
     end
 
     def validate_name(arg)

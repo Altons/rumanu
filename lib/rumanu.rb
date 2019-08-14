@@ -1,6 +1,7 @@
 require "rumanu/version"
 require "rumanu/helpers"
 require "rumanu/alphabets"
+require "rumanu/meaning"
 module Rumanu
   class Numerology
     include Rumanu

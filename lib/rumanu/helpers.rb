@@ -29,4 +29,6 @@ module Rumanu
 
   end
 
+  ogo_path = File.join( File.dirname(__FILE__), '../logo.txt' )
+  YAML.load_file("/Users/anegron/projects/rumanu/lib/rumanu/meanings/en.yml")
 end

@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rumanu"
   spec.version       = Rumanu::VERSION
   spec.authors       = ["Alberto Negron"]
-  spec.email         = ["albertonegron@example.com"]
+  spec.email         = ["albertonegron@gmail.com"]
 
   spec.summary       = %q{Magic Numerology with Ruby}
   spec.description   = %q{Numerology is the study of numbers and the meaning associated with each number.}

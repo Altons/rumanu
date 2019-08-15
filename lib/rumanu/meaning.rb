@@ -10,7 +10,16 @@ module Rumanu
     def meaning
       case self
       when 1..9
-        return load_meaning[self]
+        return load_meaning['meaning'][self]
+      else
+        return "Value out of range. Please choose a number between 1 and 9"
+      end
+    end
+
+    def destiny
+      case self
+      when 1..9
+        return load_meaning['destiny'][self]
       else
         return "Value out of range. Please choose a number between 1 and 9"
       end

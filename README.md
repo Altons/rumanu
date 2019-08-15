@@ -23,7 +23,7 @@ Or install it yourself as:
 ```ruby
 require 'rumanu'
 
-jl = Numerology.new("John Lennon","09.10.1940");
+jl = Rumanu::Numerology.new("John Lennon","09.10.1940");
 puts jl.dob
 # "09.10.1940"
 puts jl.destiny

@@ -1,3 +1,40 @@
 ---
-en:
-  1: hello,world
+meaning:
+  1:
+    positive: original, courage, leadership, forceful, will, ambitious, determination
+    negative: bossy, boastful, selfish, bullying, impulsive, impatient
+  2:
+    positive: gentle, cooperative, artistic, considerate, loving, sincere
+    negative: self-consciousness, shyness, depression, moody, sloppy, insincere
+  3:
+    positive: optimism, proud, imagination, active, popular, artistic abilities
+    negative: moodiness, wasteful, gossipy, lack of clear direction, excess
+  4:
+    positive: integrity, solid, organized, highly practical, visionary
+    negative: indifference, skewed to details vs. big picture, slow, narrow, spiteful
+  5:
+    positive: visionary, traveler, explorer, flexible, quick to learn
+    negative: impatient, vulgar, restless, impulsive
+  6:
+    positive: compassionate, artist, humanitarian, balanced, magnetic
+    negative: stubbornness, doubtful, self-righteousness, uncaring
+  7:
+    positive: silent, spiritual, analytical, independent, meditative
+    negative: skeptical, inflexible, cynical, fault finding, isolated
+  8:
+    positive: decisive, determined, political skills, strong willed, loyal, fighter for a cause
+    negative: workaholic, cruel, greedy, impatient, revengeful
+  9:
+    positive: creative, organizer, good writer, inspirational, daring, warm personality
+    negative: moody, impulsive, day dreamer, careless with money, lack of direction
+destiny:
+  1: Your destiny is to become number 1 at all you do in your life.
+  2: Your destiny is to bring people together in an atmosphere of harmony and love.
+  3: Your destiny is to inspire, motivate, heal, and uplift people.
+  4: Your destiny is to leave something of value that people can find beneficial in their day-to-day lives.
+  5: Your destiny is to effect change and show people how to live life to the maximum.
+  6: Your destiny is to provide a nurturing safe ‘nest’ for yourself and your loved ones.
+  7: Your destiny is to develop trust and faith and find your own answer to the meaning of life.
+  8: Your destiny is to manifest financial security that allows you freedom to make a difference in the world.
+  9: Your destiny is to achieve a higher state of consciousness and teach others how to achieve theirs.
+

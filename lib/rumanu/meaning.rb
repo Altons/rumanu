@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 
 require 'yaml'
 module Rumanu
   module Meaning
-    GEM_ROOT = File.expand_path("../..", __FILE__)
+    GEM_ROOT = File.expand_path('..', __dir__)
     def load_meaning
       YAML.load_file("#{GEM_ROOT}/rumanu/meanings/en.yml")
     end
@@ -10,18 +11,18 @@ module Rumanu
     def meaning
       case self
       when 1..9
-        return load_meaning['meaning'][self]
+        load_meaning['meaning'][self]
       else
-        return "Value out of range. Please choose a number between 1 and 9"
+        'Value out of range. Please choose a number between 1 and 9'
       end
     end
 
     def destiny
       case self
       when 1..9
-        return load_meaning['destiny'][self]
+        load_meaning['destiny'][self]
       else
-        return "Value out of range. Please choose a number between 1 and 9"
+        'Value out of range. Please choose a number between 1 and 9'
       end
     end
   end
@@ -30,4 +31,3 @@ end
 class Integer
   include Rumanu::Meaning
 end
-

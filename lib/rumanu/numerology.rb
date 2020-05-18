@@ -6,8 +6,8 @@ module Rumanu
     attr_reader :alphabet, :dob, :vowels, :consonants
 
     def initialize(name = 'Vance Louis Wheeler', dob = '03/08/1944')
-      @vowels = PY_VOWELS
-      @consonants = PY_CONSONANTS
+      @vowels = VOWELS
+      @consonants = CONSONANTS
       @alphabet = @vowels.merge @consonants
       @name = name
       @dob = dob
@@ -68,7 +68,7 @@ module Rumanu
     def validate_name(arg)
       raise ArgumentError, 'Name must be a string' unless arg.is_a? String
       raise ArgumentError, "Name can't be blank" if arg.empty?
-      if arg.gsub(/[^A-Za-z ]/, '').empty?
+      unless arg.gsub(/[^A-Za-z ]/, '').empty?
         raise ArgumentError, "Name can't be just numbers or special characters"
       end
     end

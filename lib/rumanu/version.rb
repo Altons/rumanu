@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 module Rumanu
-  VERSION = '0.11.2'
+  VERSION = '0.15.0'
 end

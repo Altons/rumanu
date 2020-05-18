@@ -3,19 +3,13 @@
 require 'date'
 module Rumanu
   def digit_sum(n)
-    cum = n.digits.sum
-    cum = digit_sum(cum) unless cum.to_s.length == 1
-    cum
+    return 0 if n.zero?
+
+    1 + (n - 1) % 9
   end
 
-  def reduce_list(l, alphabet)
-    init = 0
-    l.each do |c|
-      alphabet.each do |k, v|
-        init += v if c == k
-      end
-    end
-    digit_sum(init)
+  def reduce_list(lst, alphabet)
+    digit_sum(lst.map { |value| alphabet[value] }.compact.sum)
   end
 
   def valid_date?(str)

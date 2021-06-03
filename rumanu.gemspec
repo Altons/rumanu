@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "rumanu"
   spec.version       = Rumanu::VERSION
   spec.authors       = ["Alberto Negron"]
-  spec.email         = ["albertonegron@example.com"]
+  spec.email         = ["albertonegron@gmail.com"]
 
   spec.summary       = %q{Magic Numerology with Ruby}
   spec.description   = %q{Numerology is the study of numbers and the meaning associated with each number.}
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata["allowed_push_host"] = " Set to 'http://mygemserver.com'"
+    spec.metadata["allowed_push_host"] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."

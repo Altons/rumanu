@@ -1,8 +1,6 @@
 # Rumanu
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rumanu`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Tiny gem for Numerology. Calculate your Life Path and Destiny Numbers
 
 ## Installation
 
@@ -22,7 +20,33 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'rumanu'
+
+jl = Rumanu::Numerology.new("John Lennon","09.10.1940");
+puts jl.dob
+# "09.10.1940"
+puts jl.destiny
+# 6
+puts jl.destiny.destiny
+# "Your destiny is to provide a nurturing safe ‘nest’ for yourself and your loved ones."
+
+puts 9.destiny
+# "Your destiny is to achieve a higher state of consciousness and teach others how to achieve theirs."
+
+puts jl.motivation
+# 8
+puts jl.motivation.meaning
+# {"positive"=>"decisive, determined, political skills, strong willed, loyal, fighter for a cause",
+# "negative"=>"workaholic, cruel, greedy, impatient, revengeful"}
+
+puts jl.expression.meaning
+# {"positive"=>"integrity, solid, organized, highly practical, visionary",
+# "negative"=>"indifference, skewed to details vs. big picture, slow, narrow, spiteful"}
+
+puts jl.personality.meaning
+# {"positive"=>"visionary, traveler, explorer, flexible, quick to learn", "negative"=>"impatient, vulgar, # # restless, impulsive"}
+```
 
 ## Development
 
@@ -32,7 +56,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rumanu. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Altons/rumanu. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 

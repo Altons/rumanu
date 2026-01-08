@@ -11,4 +11,7 @@ module Rumanu
                  'w' => 5, 'x' => 6, 'y' => 7, 'z' => 8 }.freeze
   
   ALPHABET = VOWELS.merge(CONSONANTS).freeze
+
+  MASTER_NUMBERS = [11, 22, 33].freeze
+  KARMIC_NUMBERS = [13, 14, 16, 19].freeze
 end

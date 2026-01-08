@@ -127,4 +127,44 @@ RSpec.describe 'Rumanu Alphabets' do
       expect(alphabet).to include(*Rumanu::CONSONANTS.keys)
     end
   end
+
+  describe 'KARMIC_NUMBERS' do
+    let(:karmic_numbers) { Rumanu::KARMIC_NUMBERS }
+
+    it 'is an Array' do
+      expect(karmic_numbers).to be_a(Array)
+    end
+
+    it 'is frozen' do
+      expect(karmic_numbers).to be_frozen
+    end
+
+    it 'is not empty' do
+      expect(karmic_numbers).not_to be_empty
+    end
+
+    it 'contains integers' do
+      expect(karmic_numbers).to all(be_a(Integer))
+    end
+
+    it 'contains the correct karmic numbers' do
+      expect(karmic_numbers).to contain_exactly(13, 14, 16, 19)
+    end
+  end
+
+  describe 'MASTER_NUMBERS' do
+    let(:master_numbers) { Rumanu::MASTER_NUMBERS }
+
+    it 'is an Array' do
+      expect(master_numbers).to be_a(Array)
+    end
+
+    it 'is frozen' do
+      expect(master_numbers).to be_frozen
+    end
+
+    it 'contains integers' do
+      expect(master_numbers).to all(be_a(Integer))
+    end
+  end
 end

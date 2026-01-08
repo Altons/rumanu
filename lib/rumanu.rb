@@ -2,6 +2,6 @@
 
 require 'rumanu/version'
 require 'rumanu/helpers'
-require 'rumanu/alphabets'
+require 'rumanu/constants'
 require 'rumanu/meaning'
 require 'rumanu/numerology'

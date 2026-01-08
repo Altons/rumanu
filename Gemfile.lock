@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rumanu (0.17.0)
+    rumanu (1.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -56,7 +56,7 @@ CHECKSUMS
   rspec-expectations (3.13.5) sha256=33a4d3a1d95060aea4c94e9f237030a8f9eae5615e9bd85718fe3a09e4b58836
   rspec-mocks (3.13.7) sha256=0979034e64b1d7a838aaaddf12bf065ea4dc40ef3d4c39f01f93ae2c66c62b1c
   rspec-support (3.13.6) sha256=2e8de3702427eab064c9352fe74488cc12a1bfae887ad8b91cba480ec9f8afb2
-  rumanu (0.17.0)
+  rumanu (1.0.0)
 
 BUNDLED WITH
   4.0.3

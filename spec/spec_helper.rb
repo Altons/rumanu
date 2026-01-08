@@ -11,4 +11,19 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+    # Show the slowest examples
+  config.profile_examples = 10
+
+  # Run specs in random order to surface order dependencies
+  config.order = :random
+  Kernel.srand config.seed
+
+  # Filter lines from Rails gems in backtraces
+  config.filter_run_when_matching :focus
+
+  # Use color in STDOUT
+  config.color = true
+
+  # Use the specified formatter
+  config.formatter = :documentation
 end

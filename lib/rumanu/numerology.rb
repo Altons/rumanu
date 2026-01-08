@@ -5,10 +5,10 @@ module Rumanu
     include Rumanu
     attr_reader :alphabet, :dob
 
-    def initialize(name, dob, alphabet = nil)
+    def initialize(name, dob)
       @vowels = VOWELS
       @consonants = CONSONANTS
-      @alphabet = alphabet || vowels.merge(consonants)
+      @alphabet = ALPHABET
       @name = name
       @dob = dob
     end

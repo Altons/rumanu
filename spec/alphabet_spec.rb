@@ -88,4 +88,43 @@ RSpec.describe 'Rumanu Alphabets' do
       expect(vowel_keys & consonant_keys).to be_empty
     end
   end
+
+  ###
+  describe 'ALPHABET' do
+    let(:alphabet) { Rumanu::ALPHABET }
+
+    it 'is a Hash' do
+      expect(alphabet).to be_a(Hash)
+    end
+
+    it 'is frozen' do
+      expect(alphabet).to be_frozen
+    end
+
+    it 'is not empty' do
+      expect(alphabet).not_to be_empty
+    end
+
+    it 'has all string keys' do
+      expect(alphabet.keys).to all(be_a(String))
+    end
+
+    it 'has all integer values' do
+      expect(alphabet.values).to all(be_a(Integer))
+    end
+
+    it 'contains common consonants' do
+      expect(alphabet).to include('b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z')
+    end
+
+
+    it 'has values between 1 and 9' do
+      expect(alphabet.values).to all(be_between(1, 9))
+    end
+
+    it 'includes all vowels and consonants' do
+      expect(alphabet).to include(*Rumanu::VOWELS.keys)
+      expect(alphabet).to include(*Rumanu::CONSONANTS.keys)
+    end
+  end
 end

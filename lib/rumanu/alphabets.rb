@@ -9,4 +9,6 @@ module Rumanu
                  'h' => 8, 'j' => 1, 'k' => 2, 'l' => 3, 'm' => 4, 'n' => 5, 'ñ' => 5,
                  'p' => 7, 'q' => 8, 'r' => 9, 's' => 1, 't' => 2, 'v' => 4,
                  'w' => 5, 'x' => 6, 'y' => 7, 'z' => 8 }.freeze
+  
+  ALPHABET = VOWELS.merge(CONSONANTS).freeze
 end

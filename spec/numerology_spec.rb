@@ -7,12 +7,6 @@ RSpec.describe Rumanu::Numerology do
       expect(person).to be_a(Rumanu::Numerology)
     end
 
-    it 'creates instance with custom alphabet' do
-      custom_alphabet = { 'a' => 1, 'b' => 2 }
-      person = Rumanu::Numerology.new('John', '09.10.1940', custom_alphabet)
-      expect(person.alphabet).to eq(custom_alphabet)
-    end
-
     it 'uses default alphabet when not provided' do
       person = Rumanu::Numerology.new('John', '09.10.1940')
       expect(person.alphabet).to be_a(Hash)
